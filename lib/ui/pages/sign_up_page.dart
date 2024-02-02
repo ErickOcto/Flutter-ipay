@@ -3,8 +3,8 @@ import 'package:ipay/shared/theme.dart';
 import 'package:ipay/ui/widgets/buttons.dart';
 import 'package:ipay/ui/widgets/forms.dart';
 
-class SignInPage extends StatelessWidget {
-  const SignInPage({super.key});
+class SignUpPage extends StatelessWidget {
+  const SignUpPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +29,7 @@ class SignInPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Sign In &\nGrow Your Finance',
+            'Join Us to Unlock\nYour Growth',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semibold,
@@ -49,6 +49,12 @@ class SignInPage extends StatelessWidget {
               children: [
                 //Email Input
                 const CustomFormField(
+                  title: 'Full Name',
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const CustomFormField(
                   title: 'Email Address',
                 ),
                 const SizedBox(
@@ -62,18 +68,11 @@ class SignInPage extends StatelessWidget {
                 const SizedBox(
                   height: 8,
                 ),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: Text(
-                    'Forgot Password',
-                    style: blueTextStyle,
-                  ),
-                ),
                 const SizedBox(
                   height: 30,
                 ),
                 CustomFilledButton(
-                  title: 'Sign In',
+                  title: 'Continue',
                   onPressed: () {},
                 )
               ],
@@ -83,9 +82,9 @@ class SignInPage extends StatelessWidget {
             height: 50,
           ),
           CustomTextButton(
-            title: 'Create New Account',
+            title: 'Sign In',
             onPressed: () {
-              Navigator.pushNamed(context, '/sign-up');
+              Navigator.pushNamed(context, '/sign-in');
             },
           ),
         ],
