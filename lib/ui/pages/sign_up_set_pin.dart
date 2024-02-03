@@ -3,8 +3,8 @@ import 'package:ipay/shared/theme.dart';
 import 'package:ipay/ui/widgets/buttons.dart';
 import 'package:ipay/ui/widgets/forms.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class SignUpSetPin extends StatelessWidget {
+  const SignUpSetPin({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -45,24 +45,48 @@ class SignUpPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Email Input
-                const CustomFormField(
-                  title: 'Full Name',
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     color: uploadPhoto,
+                //   ),
+                //   child: Center(
+                //     child: Image.asset(
+                //       'assets/upload-icon.png',
+                //       width: 32,
+                //     ),
+                //   ),
+                // ),
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: const BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: AssetImage('assets/photo.png'),
+                    ),
+                  ),
                 ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
-                  title: 'Email Address',
+                Text(
+                  'Shayna Hanna',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: semibold,
+                  ),
                 ),
                 const SizedBox(
-                  height: 16,
+                  height: 30,
                 ),
-                //Password Input
+                //Pin Input
                 const CustomFormField(
-                  title: 'Password',
+                  title: 'PIN (6 Digits)',
                   obscureText: true,
                 ),
                 const SizedBox(
@@ -76,21 +100,12 @@ class SignUpPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(
                       context,
-                      '/sign-up-set-pin',
+                      '/sign-up-set-id',
                     );
                   },
-                )
+                ),
               ],
             ),
-          ),
-          const SizedBox(
-            height: 50,
-          ),
-          CustomTextButton(
-            title: 'Sign In',
-            onPressed: () {
-              Navigator.pushNamed(context, '/sign-in');
-            },
           ),
         ],
       ),

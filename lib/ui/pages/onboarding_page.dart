@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ipay/shared/theme.dart';
-import 'package:ipay/ui/pages/sign_in_page.dart';
 import 'package:ipay/ui/widgets/buttons.dart';
 
 class OnboardingPage extends StatefulWidget {
@@ -107,7 +106,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             CustomFilledButton(
                               title: 'Get Started',
                               onPressed: () {
-                                Navigator.pushNamed(context, '/sign-up');
+                                Navigator.pushNamedAndRemoveUntil(
+                                  context,
+                                  '/sign-up',
+                                  (route) => false,
+                                );
                               },
                             ),
                             const SizedBox(
@@ -116,7 +119,11 @@ class _OnboardingPageState extends State<OnboardingPage> {
                             CustomTextButton(
                                 title: 'Sign In',
                                 onPressed: () {
-                                  Navigator.pushNamed(context, '/sign-in');
+                                  Navigator.pushNamedAndRemoveUntil(
+                                    context,
+                                    '/sign-in',
+                                    (route) => false,
+                                  );
                                 }),
                           ],
                         )

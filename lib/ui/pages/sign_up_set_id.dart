@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:ipay/shared/theme.dart';
 import 'package:ipay/ui/widgets/buttons.dart';
-import 'package:ipay/ui/widgets/forms.dart';
 
-class SignUpPage extends StatelessWidget {
-  const SignUpPage({super.key});
+class SignUpSetId extends StatelessWidget {
+  const SignUpSetId({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +28,7 @@ class SignUpPage extends StatelessWidget {
             ),
           ),
           Text(
-            'Join Us to Unlock\nYour Growth',
+            'Verify Your \n Account',
             style: blackTextStyle.copyWith(
               fontSize: 20,
               fontWeight: semibold,
@@ -45,53 +44,71 @@ class SignUpPage extends StatelessWidget {
               color: whiteColor,
             ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //Email Input
-                const CustomFormField(
-                  title: 'Full Name',
+                Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: uploadPhoto,
+                  ),
+                  child: Center(
+                    child: Image.asset(
+                      'assets/upload-icon.png',
+                      width: 32,
+                    ),
+                  ),
                 ),
+                // Container(
+                //   width: 120,
+                //   height: 120,
+                //   decoration: const BoxDecoration(
+                //     shape: BoxShape.circle,
+                //     image: DecorationImage(
+                //       fit: BoxFit.cover,
+                //       image: AssetImage('assets/photo.png'),
+                //     ),
+                //   ),
+                // ),
                 const SizedBox(
                   height: 16,
                 ),
-                const CustomFormField(
-                  title: 'Email Address',
+                Text(
+                  'Passport/ID Card',
+                  style: blackTextStyle.copyWith(
+                    fontSize: 18,
+                    fontWeight: semibold,
+                  ),
                 ),
                 const SizedBox(
-                  height: 16,
-                ),
-                //Password Input
-                const CustomFormField(
-                  title: 'Password',
-                  obscureText: true,
-                ),
-                const SizedBox(
-                  height: 8,
-                ),
-                const SizedBox(
-                  height: 30,
+                  height: 50,
                 ),
                 CustomFilledButton(
                   title: 'Continue',
                   onPressed: () {
-                    Navigator.pushNamed(
+                    Navigator.pushNamedAndRemoveUntil(
                       context,
-                      '/sign-up-set-pin',
+                      '/sign-up-success',
+                      (route) => false,
                     );
                   },
-                )
+                ),
               ],
             ),
           ),
           const SizedBox(
-            height: 50,
+            height: 60,
           ),
           CustomTextButton(
-            title: 'Sign In',
+            title: 'Skip for Now',
             onPressed: () {
-              Navigator.pushNamed(context, '/sign-in');
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                '/sign-up-success',
+                (route) => false,
+              );
             },
-          ),
+          )
         ],
       ),
     );
