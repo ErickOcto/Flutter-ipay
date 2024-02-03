@@ -451,22 +451,22 @@ class HomePage extends StatelessWidget {
               HomeTipsItem(
                 imageUrl: 'assets/cover_1.png',
                 title: 'Best tips for using a credit card',
-                url: 'url',
+                url: 'https://www.google.com',
               ),
               HomeTipsItem(
                 imageUrl: 'assets/cover_2.png',
                 title: 'Spot the good pie of finance model',
-                url: 'url',
+                url: 'https://www.google.com',
               ),
               HomeTipsItem(
                 imageUrl: 'assets/cover_3.png',
                 title: 'Great hack to get better advices',
-                url: 'url',
+                url: 'https://www.google.com',
               ),
               HomeTipsItem(
                 imageUrl: 'assets/cover_4.png',
                 title: 'Save more penny buy this instead',
-                url: 'url',
+                url: 'https://www.google.com',
               ),
             ],
           ),
